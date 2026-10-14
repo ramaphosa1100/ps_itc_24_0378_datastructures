@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Student Grade Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Student Grade Tracker</h1>
+
+  <form id="addForm">
+    <input id="name" placeholder="Student name" required maxlength="40">
+    <input id="score" type="number" placeholder="Score (0-100)" min="0" max="100" required>
+    <button type="submit">Add</button>
+  </form>
+  <p id="error" role="alert"></p>
+
+  <section class="stats">
+    <div><span id="count">0</span><small>Students</small></div>
+    <div><span id="avg">-</span><small>Average</small></div>
+    <div><span id="high">-</span><small>Highest</small></div>
+    <div><span id="low">-</span><small>Lowest</small></div>
+  </section>
+
+  <div class="tools">
+    <input id="search" placeholder="Search by name">
+    <select id="sort">
+      <option value="added">Order added</option>
+      <option value="nameAsc">Name A-Z</option>
+      <option value="scoreDesc">Score high-low</option>
+      <option value="scoreAsc">Score low-high</option>
+    </select>
+    <button id="clear" class="danger" type="button">Clear all</button>
+  </div>
+
+  <div class="wrap">
+    <table>
+      <thead><tr><th>#</th><th>Name</th><th>Score</th><th>Grade</th><th></th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+  <p id="empty">No students yet. Add one above.</p>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
